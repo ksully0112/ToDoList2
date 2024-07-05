@@ -17,13 +17,13 @@ body {
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     text-align: center;
-
 }
 
 .input-area {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 }
 
 .input-area input {
@@ -32,6 +32,7 @@ body {
     border: 1px solid lightgray;
     border-radius: 4px;
     margin-right: 1em;
+    width: 100em;
 }
 
 .input-area button {
@@ -66,11 +67,11 @@ body {
     height: 4px;
     background-color: lightblue;
     position: absolute;
-    width: 330px;
+    width: 33.33%;
     padding: 0px;
     transition: all 0.3s ease;
-    top: 49px;
-    left: -1px;
+    bottom: -1px;
+    left: 0;
 }
 
 .task {
@@ -80,7 +81,7 @@ body {
     align-items: center;
 }
 
-.task div{
+.task div {
     display: flex;
     align-items: center;
 }
@@ -93,7 +94,7 @@ body {
     border: none;
     background: none;
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 .task-actions button.check {
@@ -108,13 +109,67 @@ body {
     color: red;
 }
 
-.input-area{
-    display: flex;
-    gap: 10px;
+#delete-all-button {
+    margin-left: 20px;
+    background-color: lightblue;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    border-radius: 4px;
+    cursor: pointer;
+    writing-mode: horizontal-tb;
 }
 
-#delete-all-button{
-    margin-left: 10px;
-    background-color: rgb(249, 249, 111);
+#delete-all-button:hover {
+    background-color: rgb(255, 24, 24);
 }
 
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .task-tabs div {
+        padding: 0.5em;
+        font-size: 0.9em;
+    }
+
+    .input-area {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #task-input {
+        width: 100%; 
+        padding: 10px;
+    }
+
+    #add-button, #delete-all-button {
+        width: 100%;
+        padding: 10px; 
+        margin: 0;
+    }
+
+    .task {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    .task-actions {
+        display: flex; 
+        justify-content: space-between; 
+        width: 100%; 
+    }
+
+    .task-actions button {
+        font-size: 1em; 
+    }
+
+    #under-line {
+        bottom: 0; 
+        width: 33.33%; 
+    }
+}
