@@ -10,28 +10,28 @@
     <div class="container">
         <h1>Todo List</h1>
         <section class="input-area">
-            <input type="text" id="task-input"/>
-            <button id="add-button">+</button>
+            <input type="text" id="task-input" aria-label="Task Input" placeholder="할 일"/>
+            <button id="add-button" aria-label="Add Task Button">+</button>
+            <button id="delete-all-button">Delete All</button>
         </section>
         
         <section class="task-area">
             <div class="task-tabs">
                 <div id="under-line"></div>
-                <div>
+                <div id="all" role="tab"> 
                     모두
                 </div>
-                <div>
+                <div id="ongoing" role="tab"> 
                     진행중
                 </div>
-                <div>
+                <div id="done" role="tab"> 
                     끝남
                 </div>
             </div>
-            <div id="task-board">
+            <div id="task-board" role="tabpanel"> 
             </div>
         </section>
     </div>
     <script src="./main.js"></script>
 </body>
 </html>
-

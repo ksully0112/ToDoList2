@@ -1,4 +1,6 @@
-body {
+@media screen and (max-widthL 48em){
+    
+    body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,44 +13,81 @@ body {
 
 .container {
     width: 1000px;
-    max-width: 100%;
+    min-height: 95vh;
     background: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    text-align: center;
+
 }
 
+.input-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-.task-area{
+.input-area input {
+    padding: 0.5em;
+    font-size: 1.2em;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    margin-right: 1em;
+}
+
+.input-area button {
+    padding: 0.5em 1em;
+    font-size: 1.2em;
+    background-color: lightblue;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.task-area {
     border: 1px solid lightgray;
     margin-top: 2em;
 }
-.task-tabs{
+
+.task-tabs {
     display: flex;
     border-bottom: 1px solid lightgray;
     position: relative;
-}
-.task-tabs div{
-    padding: 1em;
+    justify-content: space-around;
 }
 
-#under-line{
+.task-tabs div {
+    padding: 1em;
+    cursor: pointer;
+    text-align: center; 
+    flex-grow: 1;
+}
+
+#under-line {
     height: 4px;
     background-color: lightblue;
     position: absolute;
-    width: 80px;
-    left: 0px;
-    top: 52px;
+    width: 330px;
     padding: 0px;
+    transition: all 0.3s ease;
+    top: 49px;
+    left: -1px;
 }
 
-.task{
+.task {
     display: flex;
     justify-content: space-between;
     padding: 1em;
+    align-items: center;
 }
 
-.task-done{
+.task div{
+    display: flex;
+    align-items: center;
+}
+
+.task-done {
     background-color: #d3d3d3;
 }
 
@@ -71,3 +110,14 @@ body {
     color: red;
 }
 
+.input-area{
+    display: flex;
+    gap: 10px;
+}
+
+#delete-all-button{
+    margin-left: 10px;
+    background-color: rgb(249, 249, 111);
+}
+
+}
