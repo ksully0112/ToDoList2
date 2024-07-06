@@ -46,8 +46,10 @@ function render() {
     let list = [];
     if (mode === "all") {
         list = taskList;
-    } else if (mode === "ongoing" || mode === "done") {
-        list = filterList;
+    } else if (mode === "ongoing") {
+        list = taskList.filter(task => !task.isComplete);
+    } else if (mode === "done") {
+        list = taskList.filter(task => task.isComplete);
     }
 
     let resultHTML = "";
@@ -101,24 +103,7 @@ function deleteAllTasks(){
 
 function filter(event) {
     mode = event.target.id;
-    filterList = [];
-    if (mode === "all") {
-        render();
-    } else if (mode === "ongoing") {
-        for (let i = 0; i < taskList.length; i++) {
-            if (!taskList[i].isComplete) {
-                filterList.push(taskList[i]);
-            }
-        }
-        render();
-    } else if (mode === "done") {
-        for (let i = 0; i < taskList.length; i++) {
-            if (taskList[i].isComplete) {
-                filterList.push(taskList[i]);
-            }
-        }
-        render();
-    }
+    render();
 }
 
 function setActiveTab(activeTab) {

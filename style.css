@@ -126,7 +126,7 @@ body {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
     .container {
         width: 90%;
         padding: 10px;
@@ -136,12 +136,12 @@ body {
         padding: 0.5em;
         font-size: 0.9em;
     }
-
+    
     .input-area {
         flex-direction: column;
         gap: 5px;
     }
-
+    
     #task-input {
         width: 100%; 
         padding: 10px;
@@ -170,6 +170,10 @@ body {
 
     #under-line {
         bottom: 0; 
-        width: 33.33%; 
+        width: 33.33%;
     }
+}
+
+#under line {
+    justify-content: center;
 }
